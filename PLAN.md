@@ -9,6 +9,14 @@ Build an ATS-friendly resume platform that helps users:
 3. Tailor resumes to specific job postings
 4. Practice interviews using AI simulations based on the target company
 
+## Deployment Constraints (permanent)
+
+- **Serverless / browser-based only** — deployed at `rizzume.katpadi.ph` (DigitalOcean, but no persistent writable filesystem assumed going forward)
+- **No user accounts, no server-side resume storage**
+- All resume data stays in `localStorage`
+- AI features call an external LLM API directly from the browser (or via a lightweight Next.js API route as a proxy)
+- **Public shareable resume URLs are not planned** — requires server-side storage which conflicts with the serverless constraint
+
 ---
 
 # Phase 1: Resume Builder MVP
@@ -22,7 +30,9 @@ Allow users to create ATS-friendly resumes and export them as PDFs.
 * No backend
 * No user accounts
 * Data stored in browser local storage
-* No public resume URLs yet
+* No public resume URLs (see Deployment Constraints above)
+
+**Status: Complete ✓**
 
 ## User Flow
 
@@ -194,6 +204,69 @@ Users can:
 
 ---
 
+# Phase 1.5: Resume Checker / Assessor
+
+## Goal
+
+Give users instant AI-powered feedback on their resume without leaving the builder. No job description needed — assess the resume on its own merits.
+
+## User Flow
+
+```text
+Resume (in builder)
+      ↓
+Click "Check My Resume"
+      ↓
+AI analyzes resume content
+      ↓
+Feedback panel slides in
+      ↓
+User reviews and edits inline
+```
+
+## Features
+
+### Overall Score
+
+Single score (e.g. 74/100) with a short verdict.
+
+### Section-level Feedback
+
+For each resume section:
+
+* **Summary** — is it specific, punchy, relevant?
+* **Experience bullets** — are they achievement-oriented? do they include metrics?
+* **Skills** — are they concrete or vague?
+* **Education / Certifications** — completeness check
+
+### Weak Bullet Detection
+
+Flag bullets that:
+
+* Start with passive language ("Responsible for", "Helped with")
+* Lack measurable outcomes
+* Are too short or too generic
+
+### ATS Risk Flags
+
+* Missing contact fields
+* No skills section
+* Very short descriptions
+* Unusual section names
+
+### Suggestions
+
+Inline rewrite suggestions the user can accept with one click.
+
+## Technical Approach
+
+- Call LLM API (Claude) from a Next.js API route (proxy to keep API key server-side)
+- Pass resume JSON as context
+- Return structured JSON: `{ score, sections: [{ name, score, issues[], suggestions[] }] }`
+- Render as a collapsible side panel in the builder
+
+---
+
 # Phase 2: AI Resume Tailoring
 
 ## Goal
@@ -358,11 +431,11 @@ Users can:
 
 ---
 
-# Phase 3: AI Interview Coach
+# Phase 3: AI Interview Coach (Interactive Chat)
 
 ## Goal
 
-Help users prepare for interviews using company-specific interview simulations.
+Help users prepare for interviews via a real-time chat interface — the AI acts as an interviewer, adapts follow-up questions based on responses, and scores the session at the end.
 
 ## User Flow
 
@@ -588,14 +661,6 @@ Next.js
 ---
 
 # Stretch Goals
-
-## Public Resume URLs
-
-```text
-resume.app/katpadi
-```
-
----
 
 ## Multiple Resume Profiles
 

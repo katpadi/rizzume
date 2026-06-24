@@ -57,23 +57,19 @@ npm run lint    # ESLint
 
 ```
 app/
-  page.tsx              # Landing page (redirects to /builder)
+  page.tsx              # Landing page
   builder/page.tsx      # Main builder UI
-  api/r/route.ts        # Resume publish/rename API (file-based JSON storage)
-  r/[slug]/page.tsx     # Public resume view (server-rendered)
 
 components/
   form/                 # Section forms (Personal, Experience, Skills, etc.)
   preview/              # ResumePreview + TemplateSwitcher toolbar
   templates/            # 6 HTML resume templates
   pdf/                  # PDFButton + ResumePDF (@react-pdf layout)
-  PublishButton.tsx     # Publish / rename public URL modal (currently hidden)
   JsonPortability.tsx   # Import / export JSON
 
 lib/
   types.ts              # Resume type definitions
   resumeFonts.ts        # Font registry (id, CSS family, PDF family)
-  resumeStorage.ts      # Server-side file storage (data/resumes/*.json)
   utils.ts              # cn() + parseHtmlBlocks() for PDF rendering
 
 store/
@@ -106,14 +102,7 @@ Exported JSON shape:
 
 ---
 
-## Public Resume URLs
-
-Not planned. The app is browser-based with no server-side storage — all resume data stays in `localStorage`. The publish infrastructure (`/app/api/r/`, `/app/r/[slug]/`, `lib/resumeStorage.ts`) was built as a prototype but is not active and will not be enabled.
-
----
-
 ## Notes
 
 - PDF rendering is 100% client-side — no files are sent to any server during export.
 - `@react-pdf/renderer` uses built-in PDF fonts only (Helvetica, Times-Roman). Google Fonts selected in the preview map to the closest built-in equivalent in the PDF.
-- The `lz-string` package is installed but unused (was an earlier approach for URL-encoded sharing).

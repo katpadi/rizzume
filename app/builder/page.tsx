@@ -8,7 +8,6 @@ import { TemplateSwitcher } from '@/components/preview/TemplateSwitcher'
 import { useResumeStore } from '@/store/resumeStore'
 import { AutoSaveIndicator } from '@/components/AutoSaveIndicator'
 import { JsonPortability } from '@/components/JsonPortability'
-// import { PublishButton } from '@/components/PublishButton'
 import Link from 'next/link'
 
 const PDFButton = dynamic(() => import('@/components/pdf/PDFButton'), { ssr: false })
@@ -67,7 +66,6 @@ export default function BuilderPage() {
         <div className="flex items-center gap-1">
           <AutoSaveIndicator />
           <div className="w-px h-4 mx-2" style={{ background: 'var(--app-border)' }} />
-          {/* <PublishButton /> */}
           <JsonPortability />
           <PDFButton />
           <div className="w-px h-4 mx-1" style={{ background: 'var(--app-border)' }} />
