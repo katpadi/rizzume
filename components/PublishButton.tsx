@@ -158,7 +158,7 @@ export function PublishButton() {
             {/* Slug input */}
             <div className="flex items-center gap-0 mb-1">
               <span className="text-xs text-zinc-400 bg-zinc-50 border border-r-0 border-zinc-200 rounded-l-lg px-3 py-2 shrink-0">
-                rizz.me/r/
+                rizzume.katpadi.ph/r/
               </span>
               <input
                 autoFocus

@@ -57,7 +57,7 @@ export default function BuilderPage() {
       <header className="flex items-center justify-between px-5 py-2.5 bg-white shrink-0 shadow-sm z-10" style={{ borderBottom: '1px solid var(--app-border)' }}>
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-lg font-bold tracking-tight group-hover:opacity-70 transition-opacity" style={{ color: 'var(--app-accent)' }}>
-            rizz.me
+            rizzume
           </span>
           <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full leading-none" style={{ background: 'var(--app-accent-light)', color: 'var(--app-accent)' }}>
             beta

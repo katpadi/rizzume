@@ -1,6 +1,8 @@
-# rizz.me
+# rizzume
 
 ATS-friendly resume builder. Fill in your details, pick a template, download a PDF.
+
+**Demo:** https://rizzume.katpadi.ph
 
 ---
 

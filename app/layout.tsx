@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "rizz.me — ATS Resume Builder",
+  title: "rizzume — ATS Resume Builder",
   description: "Build ATS-friendly resumes and download polished PDFs for free.",
 };
 

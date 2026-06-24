@@ -52,7 +52,7 @@ export default function PublicResumePage({
     <div className="min-h-screen bg-zinc-100 flex flex-col">
       <header className="bg-white border-b border-zinc-200 px-6 py-3 flex items-center justify-between shrink-0">
         <Link href="/" className="text-lg font-bold text-zinc-900 tracking-tight hover:opacity-70 transition-opacity">
-          rizz.me
+          rizzume
         </Link>
         <Link href="/builder" className="text-xs font-medium text-zinc-500 hover:text-zinc-900 transition-colors">
           Build your own →
