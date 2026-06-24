@@ -48,6 +48,14 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+.btn-accent {
+  background-color: var(--app-accent);
+  transition: background-color 0.15s;
+}
+.btn-accent:hover {
+  background-color: var(--app-accent-hover);
+}
+
 :root {
   /* App accent — warm amber */
   --app-accent: #D97706;

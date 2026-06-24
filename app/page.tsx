@@ -14,10 +14,7 @@ export default function Home() {
       </p>
       <Link
         href="/builder"
-        className="px-6 py-3 font-semibold rounded-xl transition-colors text-lg text-white"
-        style={{ backgroundColor: 'var(--app-accent)' }}
-        onMouseOver={e => (e.currentTarget.style.backgroundColor = 'var(--app-accent-hover)')}
-        onMouseOut={e => (e.currentTarget.style.backgroundColor = 'var(--app-accent)')}
+        className="btn-accent px-6 py-3 font-semibold rounded-xl text-lg text-white"
       >
         Build My Resume
       </Link>
