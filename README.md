@@ -102,6 +102,19 @@ Exported JSON shape:
 
 ---
 
+## Future
+
+### Phase 1.5 — Resume Checker
+AI-powered feedback on your resume without leaving the builder. Scores the resume overall, flags weak bullets (passive language, no metrics), detects ATS risks, and suggests inline rewrites you can accept with one click.
+
+### Phase 2 — AI Resume Tailoring
+Paste a job description and get a tailored version of your resume optimized for that role. AI rewrites the summary, reorders skills and improves bullet points to match — without inventing experience or fabricating metrics. Shows a diff so you can review every change before exporting.
+
+### Phase 3 — Interview Coach
+Interactive chat-based interview simulator. Pick a role, paste a job description, and practice with an AI interviewer that adapts follow-up questions based on your answers. Scores communication, technical depth and behavioral responses at the end.
+
+---
+
 ## Notes
 
 - PDF rendering is 100% client-side — no files are sent to any server during export.
