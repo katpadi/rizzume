@@ -106,9 +106,9 @@ Exported JSON shape:
 
 ---
 
-## Public Resume URLs (not yet enabled)
+## Public Resume URLs
 
-The infrastructure is built (`/app/api/r/`, `/app/r/[slug]/`, `lib/resumeStorage.ts`) but the Publish button is hidden. Resumes are stored as JSON files under `data/resumes/[slug].json`. Override the directory with `RESUMES_DIR` env var.
+Not planned. The app is browser-based with no server-side storage — all resume data stays in `localStorage`. The publish infrastructure (`/app/api/r/`, `/app/r/[slug]/`, `lib/resumeStorage.ts`) was built as a prototype but is not active and will not be enabled.
 
 ---
 
