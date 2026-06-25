@@ -1,24 +1,32 @@
 import Link from 'next/link'
+import { RizzumeWordmark } from '@/components/brand/RizzumeWordmark'
 
 export default function Home() {
   return (
     <main
-      className="min-h-screen flex flex-col items-center justify-center px-4 text-center"
-      style={{ backgroundColor: 'var(--app-bg)' }}
+      className="min-h-screen flex flex-col items-center justify-center px-6 text-center"
+      style={{ backgroundColor: 'var(--rizz-paper)' }}
     >
-      <h1 className="text-5xl font-bold tracking-tight mb-3" style={{ color: 'var(--app-accent)' }}>
-        rizzume
-      </h1>
-      <p className="text-lg mb-8 max-w-md" style={{ color: '#78716c' }}>
-        Build ATS-friendly resumes. Preview live. Download a polished PDF — all in your browser.
+      <RizzumeWordmark size="hero" variant="coral" showTagline />
+
+      <p
+        className="mt-12 max-w-md text-[15px] leading-relaxed"
+        style={{ color: 'var(--rizz-warm-mid)' }}
+      >
+        Tailors your résumé to any job post and preps you for the interview.
+        Build ATS-friendly résumés, preview live, and download a polished PDF — all in your browser.
       </p>
+
       <Link
         href="/builder"
-        className="btn-accent px-6 py-3 font-semibold rounded-xl text-lg text-white"
+        className="mt-10 btn-accent px-8 py-3.5 font-semibold rounded-xl text-lg text-white inline-block"
       >
-        Build My Resume
+        Build My Résumé
       </Link>
-      <p className="mt-6 text-xs" style={{ color: '#a8a29e' }}>No signup required · Data stays in your browser</p>
+
+      <p className="mt-5 text-xs" style={{ fontFamily: "'Space Mono', monospace", color: 'var(--rizz-warm-muted)' }}>
+        No signup required · Data stays in your browser
+      </p>
     </main>
   )
 }
